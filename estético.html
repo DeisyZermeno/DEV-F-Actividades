@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fondo Cósmico de Microondas CMB</title>
+    <link rel="icon" href="fi3.jpg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --main-color: #2c2942;
+            --letter-color: #B4BDB5;
+            --accent-color: #80b37e;
+            --background-section: #eef5d8;
+        }
+        body {
+            background-color: var(--main-color);
+            color: var(--letter-color);
+            font-family: 'Signika Negative', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(120deg, #1b1b37, #3c6a76, #6c7e6e);
+            background-size: 300% 300%;
+            animation: gradientAnimation 10s ease infinite;
+        }
+        @keyframes gradientAnimation {
+            0% {
+        background-position: 0% 50%;
+            }
+            50% {
+        background-position: 100% 50%;
+            }
+            100% {
+        background-position: 0% 50%;
+         }
+            }
+
+        /* Menú de navegación */
+        .menu {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        .menu button {
+            padding: 30px 25px;
+            background-color: var(--accent-color);
+            border: none;
+            font-family: 'Signika Negative', sans-serif;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            font-size: 30px;
+
+            color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .menu button:hover {
+            background-color: #355d46;
+            transform: translateY(-5px);
+        }
+
+        /* Secciones ocultas */
+        .contenido {
+            display: none;
+            padding: 30px;
+            background-color: var(--background-section);
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
+            max-width: 800px;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        .activo {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        /* Animación de entrada */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="welcome-message">
+        <h1>"Desvelando el universo: análisis del CMB y más allá"</h1>
+        
+Acompáñanos en un viaje por la cosmología moderna, donde la luz antigua nos revela los secretos del espacio-tiempo.
+    </div>
+
+
+<!-- Menú de Navegación -->
+<div class="menu">
+    <button onclick="mostrarContenido('lentes')">Lentes Gravitacionales</button>
+    <button onclick="mostrarContenido('cmb')">Fondo Cósmico de Microondas</button>
+    <button onclick="mostrarContenido('parametros')">Parámetros Cosmológicos</button>
+    <button onclick="mostrarContenido('metodos')">Métodos de Análisis</button>
+</div>
+
+<!-- Sección Lentes Gravitacionales -->
+<div id="lentes" class="contenido">
+    <h2>Introducción a las lentes gravitacionales</h2>
+    <p>
+        La gravedad en el universo produce fenómenos visuales impresionantes, como las "lentes gravitacionales", un efecto donde la luz de objetos lejanos se curva al pasar cerca de cuerpos masivos como estrellas o cúmulos de galaxias. Este fenómeno fue sospechado desde los tiempos de Newton, pero no fue hasta más tarde que científicos como Cavendish y Soldner calcularon el ángulo de deflexión que experimentaría la luz debido a un objeto masivo. Hoy, sabemos que una estrella puede generar un microlenteo, y una galaxia o cúmulo de galaxias produce un efecto de lente mayor, distorsionando la luz de los objetos de fondo.
+        
+        El efecto de lente gravitacional no solo tiene implicaciones teóricas; es una herramienta crucial en la cosmología moderna. Nos permite estudiar la distribución de materia en el universo, especialmente para entender la naturaleza de la materia oscura. Analizando cómo la luz se curva en presencia de diferentes distribuciones de materia, los científicos pueden inferir propiedades clave del universo.
+        
+    </p>
+    <img src="lente.jpg" alt="Lente gravitacional fuerte">
+</div>
+
+<!-- Sección CMB -->
+<div id="cmb" class="contenido">
+    <h2>Fondo Cósmico de Microondas</h2>
+    <p>
+        Un ejemplo fascinante es el Fondo Cósmico de Microondas (CMB), la radiación remanente del Big Bang. Aproximadamente 380,000 años después del Big Bang, el universo se enfrió lo suficiente para que se formaran átomos estables, permitiendo que la luz se propagara libremente, creando el CMB. Cuando la luz del CMB atraviesa estructuras masivas, como cúmulos de galaxias, se distorsiona, un efecto conocido como "lensing del CMB".
+        
+        El estudio de estas distorsiones permite a los cosmólogos extraer información valiosa sobre parámetros como la densidad de la materia oscura (&Omega;<sub>CDM</sub>) y el parámetro de Hubble (<i>h</i>), que describe la velocidad de expansión del universo. Al comparar estas observaciones con modelos teóricos, los científicos ajustan estos parámetros para alinearlos mejor con los datos observacionales, mejorando así nuestra comprensión del cosmos.
+    </p>
+    <a href="/gif/cmb-lecture-1-Vd2U2r" title="CMB - Lecture 1"><img src="https://i.makeagif.com/media/1-31-2022/Vd2U2r.gif" alt="CMB - Lecture 1" width="700px"></a><div style="font-size:11px;">make <a href="/" title="make a gif">science GIFs</a> like this at MakeaGif</div>
+    <h1>Efecto del Lensing en el CMB</h1>
+    <p> 
+        El efecto de "lensing" o lentes gravitacionales ocurre cuando la luz de objetos distantes, como las galaxias o el Fondo Cósmico de Microondas (CMB), se curva al pasar cerca de objetos masivos, como cúmulos de galaxias. El CMB es la radiación remanente del Big Bang, que se liberó cuando el universo tenía aproximadamente 380,000 años. A medida que esta radiación atraviesa grandes estructuras en el universo, la gravedad de esos objetos masivos distorsiona su camino, alterando la "imagen" del CMB que observamos desde la Tierra.
+
+        Este fenómeno no cambia la temperatura promedio del CMB, pero sí afecta la distribución de las fluctuaciones en esa temperatura. La luz se desvía a lo largo de diferentes direcciones al encontrar regiones de mayor densidad, y este efecto puede hacer que algunas áreas del CMB parezcan más grandes o pequeñas de lo que realmente son. En escalas pequeñas, estas distorsiones pueden ser sutiles, pero con el uso de instrumentos avanzados y telescopios de alta precisión, los científicos pueden medir y analizar estas desviaciones. Así, el estudio de las distorsiones en el CMB debido al lensing proporciona pistas sobre cómo están distribuidas las grandes estructuras en el universo y sobre la cantidad y naturaleza de la materia en esas regiones.
+        
+        Las lentes gravitacionales en el CMB también permiten explorar el efecto de pequeñas variaciones en la densidad de la materia oscura y cómo estas interactúan con la luz. Este análisis revela detalles clave sobre la estructura del universo y abre la puerta a estudios sobre la distribución de la materia, tanto visible como invisible, en diferentes escalas y regiones. Al observar el "lenteado" en el CMB, los científicos pueden trazar un mapa de la materia que se encuentra entre nosotros y el borde del universo observable, mejorando nuestra comprensión de cómo evolucionó el cosmos desde sus primeras etapas.
+
+    </p>
+</div>
+
+<!-- Sección Parámetros Cosmológicos -->
+<div id="parametros" class="contenido">
+    <h2>Parámetros Cosmológicos</h2>
+    <p>Los parámetros cosmológicos son valores que describen...</p>
+    <p>
+        Para entender y modelar el efecto de las lentes gravitacionales en el CMB, los cosmólogos utilizan varios parámetros fundamentales que describen las propiedades del universo. Entre los más importantes se encuentran:
+        </p>
+        
+        <p>
+        <strong>Densidad de Bariones (&Omega;<sub>b</sub>)</strong>: Representa la densidad de la materia "ordinaria", como átomos y partículas, que forman estrellas, planetas, y seres vivos.
+        </p>
+        
+        <p>
+        <strong>Densidad de Materia Oscura Fría (&Omega;<sub>CDM</sub>)</strong>: Describe la cantidad de materia oscura, una forma de materia que no emite ni absorbe luz, pero que tiene un efecto gravitacional que afecta la expansión del universo.
+        </p>
+        
+        <p>
+        <strong>Parámetro de Hubble (<i>h</i>)</strong>: Indica la velocidad de expansión del universo, permitiendo calcular la distancia y la velocidad con la que las galaxias se alejan unas de otras.
+        </p>
+        
+        <p>
+        Estos parámetros se determinan al comparar modelos teóricos con observaciones reales del CMB, usando técnicas como la simulación por cadenas de Markov de Monte Carlo (MCMC). En estos modelos, los valores de &Omega;<sub>b</sub>, &Omega;<sub>CDM</sub>, y <i>h</i> se ajustan hasta que el modelo concuerda lo mejor posible con los datos observados.
+        </p>
+        
+        <p>
+        Además, se usan ecuaciones fundamentales, como las <strong>ecuaciones de Einstein</strong> y la <strong>teoría de perturbaciones cosmológicas</strong>. Estas ecuaciones explican cómo las perturbaciones en la densidad y el campo gravitacional afectan el CMB. Por ejemplo, la ecuación de deflexión, que relaciona la dirección de la luz con la desviación causada por un potencial gravitacional, permite calcular cuánto se desvía un fotón de su trayectoria original. Una forma de esta ecuación es:
+        </p>
+        
+        <p style="text-align:center; font-style: italic;">
+        X̃(&#x005E;n) = X(&#x005E;n + &alpha;(&#x005E;n))
+        </p>
+        
+        <p>
+        donde <i>X</i> representa las propiedades del CMB (como temperatura o polarización), y &alpha;(&#x005E;n) es el ángulo de desviación causado por el potencial gravitacional de la estructura de materia en el universo.
+        </p>
+        
+        <p>
+        Para obtener una descripción precisa, también se calculan los momentos multipolares del potencial de lente, que permiten representar el efecto de la lente en el espectro del CMB. En cosmología, este tipo de análisis ayuda a construir un modelo de cómo se distribuye la materia en el universo y cómo evoluciona con el tiempo. Los cosmólogos siguen mejorando estos modelos al combinar ecuaciones teóricas con observaciones, generando simulaciones cada vez más precisas sobre la formación y evolución del universo desde sus inicios hasta la actualidad.
+        </p>
+    
+</div>
+
+<!-- Sección Métodos de Análisis -->
+<div id="metodos" class="contenido">
+    <h2>Métodos de Análisis</h2>
+    <p>
+        Para obtener los valores de los parámetros cosmológicos, se utiliza un análisis detallado que incluye el método de Monte Carlo Markov Chain (MCMC). Esta técnica permite explorar el espacio de parámetros cosmológicos y encontrar los valores más probables que concuerden con las observaciones del Fondo Cósmico de Microondas (CMB). El gráfico que se presenta a continuación muestra las relaciones entre algunos de estos parámetros obtenidos. Las líneas claras que se observan indican una fuerte correlación entre ciertos parámetros, sugiriendo cómo unos pueden influir en los valores de otros.
+        </p>
+        
+        <img src="valores.png" alt="Ressultados del analisis computacional" width="700">
+
+
+        <p>
+        En el gráfico, podemos ver valores aproximados para varios parámetros, los cuales se pueden comparar con los resultados obtenidos en el estudio de Planck 2018, un experimento fundamental para la cosmología moderna. Entre estos parámetros se encuentran el parámetro de Hubble (<i>h</i>), que mide la velocidad de expansión del universo, la densidad de bariones (&Omega;<sub>b</sub>), y la densidad de materia oscura fría (&Omega;<sub>CDM</sub>). Los valores obtenidos en nuestro análisis son notablemente cercanos a los valores de Planck 2018, lo que valida tanto el modelo como el método de ajuste que hemos utilizado.
+        </p>
+        
+        <img src="tabla.png" width="800">
+        <p>
+        La tabla comparativa ilustra esta concordancia: por ejemplo, el parámetro de Hubble tiene un valor estimado de 0.68 en nuestro análisis, mientras que el valor reportado por Planck es 0.6732 ± 0.0050. De forma similar, para la densidad de bariones (&Omega;<sub>b</sub>), obtuvimos un valor de 0.022, muy cercano al de Planck, que es 0.022383 ± 0.000106. Este tipo de precisión sugiere que nuestras simulaciones, basadas en MCMC, logran capturar los detalles esenciales del universo, confirmando que nuestras observaciones y modelos teóricos están bien alineados.
+        </p>
+        
+        <p>
+        También incluimos una tabla de errores relativos que muestra las diferencias porcentuales entre los valores obtenidos y los reportados por Planck 2018. Estos errores son bajos en general, lo que refuerza la precisión de nuestros resultados y la eficacia del método de ajuste. En conjunto, estos datos respaldan la consistencia del modelo teórico utilizado y las técnicas de ajuste aplicadas.
+        </p>
+        
+        <p>
+        Gracias a herramientas avanzadas como MCMC y la simulación con CLASS, hemos logrado una modelización detallada de los efectos de las lentes gravitacionales en el CMB. Esta combinación de técnicas nos permite ajustar con precisión parámetros clave como la densidad de materia oscura y el índice espectral, brindando una visión más profunda y detallada del cosmos y de la evolución de sus estructuras.
+        </p> 
+</div>
+
+<!-- Script para mostrar secciones -->
+<script>
+
+    
+
+    function mostrarContenido(id) {
+        const secciones = document.querySelectorAll('.contenido');
+        secciones.forEach(seccion => {
+            if (seccion.id === id) {
+                seccion.classList.add('activo');
+            } else {
+                seccion.classList.remove('activo');
+            }
+        });
+        const welcomeMessage = document.getElementById('welcome-message');
+        if (welcomeMessage) {
+            welcomeMessage.style.display = 'none';
+
+    }
+}
+</script>
+
+</body>
+</html>

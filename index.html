@@ -66,6 +66,55 @@
             transform: translateY(-5px);
         }
 
+
+        /* Estilos para el formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: var(--background-section);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    font-size: 18px;
+    color: #333;
+}
+
+form input, form textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    border-color: var(--accent-color);
+}
+
+form button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #355d46;
+}
+
+           
+
+
+
         /* Secciones ocultas */
         .contenido {
             display: none;
@@ -226,6 +275,34 @@ Acompáñanos en un viaje por la cosmología moderna, donde la luz antigua nos r
         Gracias a herramientas avanzadas como MCMC y la simulación con CLASS, hemos logrado una modelización detallada de los efectos de las lentes gravitacionales en el CMB. Esta combinación de técnicas nos permite ajustar con precisión parámetros clave como la densidad de materia oscura y el índice espectral, brindando una visión más profunda y detallada del cosmos y de la evolución de sus estructuras.
         </p> 
 </div>
+<!-- Botón para la sección de Sugerencias -->
+<div class="menu">
+    <button onclick="mostrarContenido('sugerencias')">Sugerencias y Colaboración</button>
+</div>
+
+<!-- Sección de Sugerencias -->
+<div id="sugerencias" class="contenido">
+    <h2>¡Comparte tus ideas y sugerencias!</h2>
+    <p>Nos encantaría escuchar tus sugerencias sobre temas de investigación o colaboraciones para nuestros proyectos. Por favor, llena el siguiente formulario.</p>
+
+    <form id="form-sugerencias" onsubmit="enviarFormulario(event)">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="Tu correo" required>
+
+        <label for="sugerencia">Comentario o sugerencia:</label>
+        <textarea id="sugerencia" name="sugerencia" rows="4" placeholder="Tu comentario aquí..." required></textarea>
+
+        <label for="colaboracion">Interesado en colaborar:</label>
+        <input type="checkbox" id="colaboracion" name="colaboracion"> Sí, estoy interesado
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <p id="mensaje-exito" style="display:none; color: green; font-weight: bold;">¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.</p>
+</div>
 
 <!-- Script para mostrar secciones -->
 <script>
@@ -246,7 +323,33 @@ Acompáñanos en un viaje por la cosmología moderna, donde la luz antigua nos r
             welcomeMessage.style.display = 'none';
 
     }
+
 }
+function enviarFormulario(event) {
+    event.preventDefault();
+    const nombre = document.getElementById('nombre').value;
+    const email = document.getElementById('email').value;
+    const sugerencia = document.getElementById('sugerencia').value;
+    const colaboracion = document.getElementById('colaboracion').checked;
+
+    // Aquí podrías enviar los datos a un backend, pero para esta demostración solo mostramos un mensaje.
+    console.log("Nombre:", nombre);
+    console.log("Email:", email);
+    console.log("Sugerencia:", sugerencia);
+    console.log("Colaboración:", colaboracion ? "Sí" : "No");
+
+    document.getElementById('mensaje-exito').style.display = 'block';
+    document.getElementById('form-sugerencias').reset();
+}
+
+// Mostrar secciones
+function mostrarContenido(id) {
+    const secciones = document.querySelectorAll('.contenido');
+    secciones.forEach(seccion => seccion.classList.remove('activo'));
+    document.getElementById(id).classList.add('activo');
+}
+
+    
 </script>
 
 </body>
